@@ -109,6 +109,7 @@
       <w>frbrvp</w>
       <w>frbrvpr</w>
       <w>frbvp</w>
+      <w>freejoint</w>
       <w>freestream</w>
       <w>frhvp</w>
       <w>friedrichshafen</w>
@@ -177,6 +178,7 @@
       <w>maxtime</w>
       <w>midspan</w>
       <w>miley</w>
+      <w>mjcf</w>
       <w>mklink</w>
       <w>monge</w>
       <w>mook</w>
@@ -208,7 +210,9 @@
       <w>pterasoftware</w>
       <w>pycache</w>
       <w>pyvista</w>
+      <w>qpos</w>
       <w>quast</w>
+      <w>qvel</w>
       <w>qwindows</w>
       <w>raymer</w>
       <w>rbrv</w>
