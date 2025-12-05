@@ -343,9 +343,9 @@ def _compute_wake_area_mismatch(
 ) -> float:
     """Computes the average area mismatch between wake and bound RingVortices.
 
-    Creates a temporary Problem and solver, steps through some number of time
-    steps (geometry only, no aerodynamic solve), and computes the average area mismatch
-    at each step.
+    Creates a temporary Problem and solver, steps through some number of time steps
+    (geometry only, no aerodynamic solve), and computes the average area mismatch at
+    each step.
 
     The area mismatch metric measures how well the wake RingVortex sizing matches the
     bound RingVortex sizing. A lower value indicates better matching.
