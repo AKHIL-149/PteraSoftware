@@ -190,6 +190,7 @@
       <w>maxiter</w>
       <w>maxtime</w>
       <w>meansize</w>
+      <w>mettu</w>
       <w>midspan</w>
       <w>miley</w>
       <w>mjcf</w>
@@ -216,6 +217,7 @@
       <w>ornithopter</w>
       <w>pathex</w>
       <w>pchip</w>
+      <w>peterdsharpe</w>
       <w>pfalz</w>
       <w>plotkin</w>
       <w>postinstall</w>
