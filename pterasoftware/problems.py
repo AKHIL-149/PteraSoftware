@@ -30,7 +30,8 @@ class SteadyProblem:
 
     **Contains the following methods:**
 
-    None
+    reynolds_numbers: A list of Reynolds numbers, one for each Airplane in the
+    SteadyProblem.
     """
 
     def __init__(
@@ -84,6 +85,35 @@ class SteadyProblem:
                     panel.Brpp_GP1_CgP1 = _transformations.apply_T_to_vectors(
                         T_pas_G_Cg_to_GP1_CgP1, panel.Brpp_G_Cg, has_point=True
                     )
+
+    @property
+    def reynolds_numbers(self) -> list[float]:
+        """A list of Reynolds numbers, one for each Airplane in the SteadyProblem.
+
+        **Notes:**
+
+        The Reynolds number is calculated as: Re = (V x L) / nu, where V is the
+        freestream speed, observed from the Earth frame (vCg__E from OperatingPoint,
+        m/s), L is the characteristic length (c_ref from Airplane, m), and nu is the
+        kinematic viscosity (nu from OperatingPoint, m^2/s).
+
+        These Reynolds numbers only consider the freestream speed, not any apparent
+        velocity due to prescribed motion, so be careful interpreting it for cases where
+        this SteadyProblem corresponds to one time step in an UnsteadyProblem.
+
+        :return: A list of Reynolds numbers, one for each Airplane.
+        """
+        v = self.operating_point.vCg__E
+        nu = self.operating_point.nu
+
+        reynolds_list = []
+        for airplane in self.airplanes:
+            c_ref = airplane.c_ref
+            assert c_ref is not None, "Airplane c_ref must be set to calculate Re"
+            re = (v * c_ref) / nu
+            reynolds_list.append(re)
+
+        return reynolds_list
 
 
 class UnsteadyProblem:
